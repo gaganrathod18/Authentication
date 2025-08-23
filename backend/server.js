@@ -8,7 +8,18 @@ dotenv.config();
 const app = express();
 
 //middleware
-app.use(cors());
+const frontendUrls = process.env.FRONTEND_URLS?.split(",") || [];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || frontendUrls.includes(origin)) {callback(null, true);
+      } else { callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 //Routes
