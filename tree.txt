@@ -1,0 +1,19 @@
+﻿├── backend
+│   ├── controllers
+│   ├── middlewares
+│   ├── models
+│   └── routes
+├── frontend
+│   ├── public
+│   └── src
+│       ├── assets
+│       ├── components
+│       │   └── icons
+│       ├── pages
+│       └── utils
+└── solution
+    ├── public
+    └── src
+        ├── components
+        ├── pages
+        └── utils
